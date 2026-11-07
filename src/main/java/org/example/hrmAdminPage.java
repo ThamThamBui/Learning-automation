@@ -38,11 +38,15 @@ public class hrmAdminPage {
                     "//div[contains(@class,'oxd-table-card')][3]" +
                     "//button[.//i[contains(@class,'bi-pencil-fill')]]"
     );
-    
+    By userRoleHeader = By.xpath(
+            "//div[contains(@class,'oxd-table-header-cell')][text()[normalize-space()='User Role']]"
+    );
 
-
-
-
-
-
+    By employeeNameHeader = By.xpath(
+            "//div[contains(@class,'oxd-table-header-cell')][text()[normalize-space()='Employee Name']]"
+    );
+    By breadcumAdminUsermanagement = By.xpath("//h6[text()='Admin']");
+    By collapseSidePanelButton = By.xpath("//button[@class='oxd-icon-button oxd-main-menu-button']");
+    By collapseSystemUserButton = By.xpath("//i[@class='oxd-icon bi-caret-up-fill']");
+    By addButton = By.xpath("//button[normalize-space()='Add']");
 }
