@@ -29,6 +29,9 @@ public class loginTest extends baseTest{
         //Admin admin123 true
         //failed admin123 false
         //Admin failed false
+        // dùng LoginData[].class vì file json là 1 mảng
+        // TestNG bắt buộc kiểu Object[][]: mỗi han =1 lần chạy test, mỗi cột =1 tham số của @Test
+        // ở đây @Test chỉ có 1 tham số là LoginData nên mỗi hàng có 1 cột
         Object[][] dataLogin = new Object[list.length][1];
         for (int i = 0; i < list.length; i++) {
             dataLogin[i][0] = list[i];

@@ -39,4 +39,11 @@ public class DashBoardTest extends baseTest{
         DashBoardPage dashBoardPage = new DashBoardPage(driver, wait);
         Assert.assertTrue(dashBoardPage.isElementPresent());
     }
+
+    @Test(description ="Logout")
+    public void logout(){
+        DashBoardPage dashBoardPage = new DashBoardPage(driver, wait);
+        dashBoardPage.logout();
+        Assert.assertTrue(driver.getCurrentUrl().contains("login"));
+    }
 }

@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class DashBoardPage extends basePage {
     public static final By MENU_ADMIN = By.xpath("//a[@href='/web/index.php/admin/viewAdminModule']");
+    public static final By USER_DROPDOWN = By.xpath("//span[contains(@class,'oxd-userdropdown-tab')]");
+    public static final By LOGOUT_BTN = By.xpath("//a[@href='/web/index.php/auth/logout']");
     //c2: //spand[text()='Admin']
     //c3: //a[.//spand[text()='Admin']]
     // giải thích: //a -> tìm tất cả thẻ a
@@ -46,5 +48,11 @@ public class DashBoardPage extends basePage {
        // return menuAdmin.isDisplayed();
     }
 
+    public void logout(){
+        WebElement userDropdown = wait.until(ExpectedConditions.visibilityOfElementLocated(USER_DROPDOWN));
+        userDropdown.click();
+        WebElement logoutBtn = wait.until(ExpectedConditions.elementToBeClickable(LOGOUT_BTN));
+        logoutBtn.click();
+    }
 
 }
